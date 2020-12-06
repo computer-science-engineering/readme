@@ -12,6 +12,7 @@
 - [Building Microservices: Designing Fine-Grained Systems](https://github.com/computer-science-engineering/notes-book_bmdfgs)
 - [Distributed Systems For Fun and Profit](https://github.com/computer-science-engineering/notes-book_dsffp)
 - [Production Ready Microservices](https://github.com/computer-science-engineering/notes-book_prm)
+- [I Heart Logs: Event Data, Stream Processing, and Data Integration](https://github.com/computer-science-engineering/notes-book_i-heart-logs_jay-kreps)
 
 ## Coding
 
