@@ -16,4 +16,4 @@
 
 ## Coding
 
-- [Learning COmputer Science](https://github.com/computer-science-engineering/learning-computer-science): Will be broken down to multiple repositories.
+- [Learning Computer Science](https://github.com/computer-science-engineering/learning-computer-science): Will be broken down to multiple repositories.
