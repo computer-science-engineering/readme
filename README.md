@@ -4,8 +4,6 @@
    1. [Books](#books)
 2. [Coding](#coding)
 
-Entry point to all repos under this org.
-
 ## Notes
 
 ### Books
