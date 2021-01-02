@@ -1,0 +1,14 @@
+# Should have a step to deploy to gh-pages
+
+name: build-test
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Make all
+      working-directory: ./
+      run: ls
