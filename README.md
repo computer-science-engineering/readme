@@ -1,4 +1,4 @@
-# metadata-compiler
+# README
 
 1. [Overview](#overview)
 2. [Project](#project)
@@ -12,11 +12,9 @@
 7. [References](#references)
 8. [License](#license)
 
-Compiles metadata from all relevant repositories under this org.
-
 ## Overview
 
-[All Repositories](./readme.md)
+[All Repositories](./repositories.md)
 
 Few badges here: discord/gitter/spectrum server, build status (circleci/travis/github-workflow; ghworkflow preferable), code coverage.
 
