@@ -108,7 +108,7 @@ def create_problems_list(files):
         text = f"| {count} | {problem_type} | [{problem_name}]({full_link}) | {problem_origin} | {companies_string} | {categories_string} | {tags_string} | {languages_string} |"
         file_to_update_md.write("\n" + text)
     print(f"Total problems: {count}")
-    json_data = json.dumps(data_all)  #, indent=2)
+    json_data = json.dumps(data_all, indent=2)
     file_to_update_json = open(PROBLEMS_LIST_FILE_JSON, "w+")
     file_to_update_json.write(json_data)
     file_to_update_json.close()
