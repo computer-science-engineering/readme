@@ -17,8 +17,6 @@ def remove_readonly(func, path, excinfo):
 
 
 def clean_repositories_dir(dir):
-    if not os.path.exists(dir):
-        os.makedirs(dir)
     shutil.rmtree(dir, onerror=remove_readonly)
 
 
@@ -26,6 +24,8 @@ def clean_repositories_dir(dir):
 def clone_repositories(list):
     parent_folder = './repositories'
     clean_repositories_dir(parent_folder)
+    if not os.path.exists(parent_folder):
+        os.makedirs(parent_folder)
     for item in list:
         folder_name = get_folder_name(item['url'])
         git.Repo.clone_from(item['url'],
