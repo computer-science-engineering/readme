@@ -3,12 +3,20 @@
 name: build-test
 on: [push]
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-
-    - name: Make all
-      working-directory: ./
-      run: ls
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+          architecture: "x64"
+      - run: python --version
+      - run: pip install -r requirements.txt
+      - name: Make all
+        run: make all
+      - uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: "./repositories/artifacts"

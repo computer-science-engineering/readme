@@ -1,10 +1,23 @@
-backend:
-	@echo WIP
+workspaceFolder :=
 
-cli:
-	@echo WIP
+# https://gist.github.com/sighingnow/deee806603ec9274fd47
+ifneq ($(OS),Windows_NT)
+	workspaceFolder = ./
+endif
 
-frontend:
-	@echo WIP
+pythonrequirements:
+	pip install -r requirements.txt
 
-all: backend cli frontend
+get-repositories:
+	python ${workspaceFolder}src/get-repositories.py
+
+create-problems-list:
+	python ${workspaceFolder}src/create-problems-list.py
+
+update-repositories-md:
+	python ${workspaceFolder}src/update-repositories-md.py
+
+run-all-scripts:
+	python ${workspaceFolder}src/run-scripts.py
+
+all: pythonrequirements get-repositories create-problems-list update-repositories-md

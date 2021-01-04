@@ -6,8 +6,9 @@ pip install -r python-requirements.txt
 import os
 import json
 
-PROBLEMS_LIST_FILE_MD = "./repositories/problems_list.md"
-PROBLEMS_LIST_FILE_JSON = "./repositories/problems_list.json"
+PROBLEMS_LIST_DIR = './repositories/artifacts'
+PROBLEMS_LIST_FILE_MD = f'{PROBLEMS_LIST_DIR}/problems_list.md'
+PROBLEMS_LIST_FILE_JSON = f'{PROBLEMS_LIST_DIR}/problems_list.json'
 
 PROBLEM_ID_STRING = "Id"
 PROBLEM_TYPE_STRING = "Type"
@@ -162,6 +163,8 @@ def get_link(local_path):
 
 def main():
     """main method."""
+    if not os.path.exists(PROBLEMS_LIST_DIR):
+        os.makedirs(PROBLEMS_LIST_DIR)
     files = find_files()
     create_problems_list(files)
 
