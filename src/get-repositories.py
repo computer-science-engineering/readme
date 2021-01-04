@@ -17,9 +17,9 @@ def remove_readonly(func, path, excinfo):
 
 
 def clean_repositories_dir(dir):
-    shutil.rmtree(dir, onerror=remove_readonly)
     if not os.path.exists(dir):
         os.makedirs(dir)
+    shutil.rmtree(dir, onerror=remove_readonly)
 
 
 # git config --system core.longpaths true
