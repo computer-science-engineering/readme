@@ -14,7 +14,7 @@
 
 ## Overview
 
-[All Repositories](./repositories.md)
+**This file lists all the repositories under this organization:** [All Repositories](./repositories.md).
 
 [![Actions Status](https://github.com/computer-science-engineering/readme/workflows/build-test/badge.svg)](https://github.com/computer-science-engineering/readme/actions)
 [![GitHub Super-Linter](https://github.com/computer-science-engineering/readme/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
