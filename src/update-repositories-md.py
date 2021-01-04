@@ -54,7 +54,7 @@ def get_data(files):
 
 def create_file(files):
     data = get_data(files)
-    md_file = MdUtils(file_name='repositories', title='dummy')
+    md_file = MdUtils(file_name='repositories')
     md_file.new_header(level=1, title='Repositories')
     grouped_by_type = groupby(data, key=itemgetter('type'))
     for key, value in grouped_by_type:
