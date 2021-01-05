@@ -54,6 +54,9 @@ def create_problems_list(files):
     count = 0
     data_all = []
     for item in files.items():
+        if 'skip_for_problems_list' in item and item[
+                'skip_for_problems_list'] == "True":
+            continue
         data = {}
         count = count + 1
         data[PROBLEM_ID_STRING] = count
