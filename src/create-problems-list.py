@@ -54,16 +54,17 @@ def create_problems_list(files):
     count = 0
     data_all = []
     for item in files.items():
-        if 'skip_for_problems_list' in item and item[
-                'skip_for_problems_list'] == "True":
-            continue
-        data = {}
-        count = count + 1
-        data[PROBLEM_ID_STRING] = count
-
         input_file = open(item[1][0], mode="r", encoding="utf-8")
         text = input_file.read()
         json_parsed = json.loads(text)
+
+        if 'skip_for_problems_list' in json_parsed and json_parsed[
+                'skip_for_problems_list'] == "True":
+            continue
+
+        data = {}
+        count = count + 1
+        data[PROBLEM_ID_STRING] = count
 
         problem_type = json_parsed["type"]
         data[PROBLEM_TYPE_STRING] = problem_type
