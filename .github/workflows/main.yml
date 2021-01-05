@@ -1,7 +1,10 @@
 # Should have a step to deploy to gh-pages
 
 name: build-test
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: "0 12 * * *"
 jobs:
   build:
     name: Build
