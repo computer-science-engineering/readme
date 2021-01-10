@@ -1,4 +1,6 @@
+from mimetypes import init
 import os
+from reprlib import recursive_repr
 import stat
 import git
 import json
@@ -28,8 +30,17 @@ def clone_repositories(list):
     clean_repositories_dir(parent_folder)
     for item in list:
         folder_name = get_folder_name(item['url'])
-        git.Repo.clone_from(item['url'],
-                            os.path.join(parent_folder, folder_name))
+        local_path = os.path.join(parent_folder, folder_name)
+        git.Repo.clone_from(item['url'], local_path)
+        repo = git.Repo(local_path)
+        #repo.submodule_update(init=True, recursive=True)
+        repo.git.submodule('update', '--init', '--recursive', '--remote',
+                           '--merge')
+        # for submodule in repo.submodules:
+        #     submodule.update(init=True,
+        #                      recursive=True,
+        #                      remote=True,
+        #                      merge=True)
 
 
 def get_folder_name(url):
