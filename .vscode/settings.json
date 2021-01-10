@@ -65,5 +65,10 @@
   "java.debug.settings.console": "internalConsole",
   "markdown.extension.list.indentationSize": "inherit",
   "python.linting.enabled": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
   "c3.rootPackage": ""
 }

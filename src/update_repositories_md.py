@@ -1,11 +1,11 @@
-import os
 import json
-from itertools import chain
-import git
-from mdutils.mdutils import MdUtils
-import numpy as np
-from itertools import groupby
+import os
+from itertools import chain, groupby
 from operator import itemgetter, sub
+
+import git
+import numpy as np
+from mdutils.mdutils import MdUtils
 
 LCS_REPO_NAME = 'learning-computer-science'
 
