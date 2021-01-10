@@ -36,11 +36,6 @@ def clone_repositories(list):
         #repo.submodule_update(init=True, recursive=True)
         repo.git.submodule('update', '--init', '--recursive', '--remote',
                            '--merge')
-        # for submodule in repo.submodules:
-        #     submodule.update(init=True,
-        #                      recursive=True,
-        #                      remote=True,
-        #                      merge=True)
 
 
 def get_folder_name(url):
