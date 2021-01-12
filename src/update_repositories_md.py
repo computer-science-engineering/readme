@@ -82,8 +82,9 @@ def create_file(files):
         md_file.new_header(level=2, title=key)
         if key == 'Reading':
             write_reading_entries(value_sorted, md_file)
-        for item in value_sorted:
-            write_item(item, md_file)
+        else:
+            for item in value_sorted:
+                write_item(item, md_file)
         md_file.new_line()
     md_file.create_md_file()
 
