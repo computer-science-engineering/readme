@@ -2,9 +2,11 @@ import json
 import os
 from itertools import chain, groupby
 from operator import itemgetter, sub
+from urllib.parse import urlparse
 
 import git
 import numpy as np
+import validators
 from mdutils.mdutils import MdUtils
 
 LCS_REPO_NAME = 'learning-computer-science'
@@ -50,7 +52,7 @@ def get_submodules(files):
                 os.path.join(cwd, path_to_submodule_part, 'metadata.json'))
             metadata_file = open(path_to_metadata_file)
             metadata = json.load(metadata_file)
-            submodules_result[path_to_submodule_part] = (path_to_metadata_file,
+            submodules_result[path_to_submodule_part] = (submodule.url,
                                                          metadata)
     return dict(
         chain.from_iterable(d.items() for d in (files, submodules_result)))
@@ -62,8 +64,14 @@ def get_data(files):
         data_dict = {}
         data_dict['type'] = value[1]['type']
         data_dict['name'] = value[1]['name']
-        local_path_parts = value[0].split(os.path.sep)
-        repo_name = local_path_parts[-2]
+        valid = validators.url(value[0])
+        if valid == True:
+            parse_object = urlparse(value[0])
+            url_paths = parse_object.path.split('/')
+            repo_name = url_paths[-1]
+        else:
+            local_path_parts = value[0].split(os.path.sep)
+            repo_name = local_path_parts[-2]
         data_dict[
             'url'] = f'https://github.com/computer-science-engineering/{repo_name}'
         if data_dict['type'] == 'Reading':
