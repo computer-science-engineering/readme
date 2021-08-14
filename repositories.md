@@ -22,3 +22,7 @@
 - [I Heart Logs: Event Data, Stream Processing, and Data Integration](https://github.com/computer-science-engineering/notes-book_i-heart-logs_jay-kreps)  
 - [Production-Ready Microservices](https://github.com/computer-science-engineering/notes-book_prm)  
 - [Scaling Teams: Strategies for Building Successful Teams and Organizations](https://github.com/computer-science-engineering/notes-book_scaling-teams_grosse_loftesness)  
+
+## Course
+  
+- [Grokking the Coding Interview: Patterns for Coding Questions](https://github.com/computer-science-engineering/educativeio-courses_grokking-coding-interview)  
